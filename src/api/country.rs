@@ -1,4 +1,4 @@
-use actix_web::{get, web::{Path, ServiceConfig}, HttpResponse, Responder};
+use actix_web::{get, web::{Path, ServiceConfig}, HttpResponse};
 use crate::repository::country::CountryRepository;
 
 pub fn init(cfg: &mut ServiceConfig) {

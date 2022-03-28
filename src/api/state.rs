@@ -43,8 +43,8 @@ pub async fn get_country_states(country_id: Path<u32>) -> HttpResponse {
     let result = state_repository.find_by_country(country_id.into_inner());
     
      match result {
-        Ok(row) => {
-            match row {
+        Ok(value) => {
+            match value {
                 Some(states) => HttpResponse::Ok().json(states),
                 None => HttpResponse::NotFound().body("Country not found"),
             }
