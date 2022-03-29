@@ -10,3 +10,4 @@ actix-web = "^4"
 actix-cors = "^0.6.1"
 serde = { version = "^1", features = ["derive"] }
 mysql = "^22.1.0"
+dotenv = "^0.15.0"

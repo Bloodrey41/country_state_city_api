@@ -1,10 +1,13 @@
 use actix_web::{HttpServer, App};
 use actix_cors::Cors;
+use dotenv::dotenv;
 use std::env;
 use geo::api::*;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    dotenv().ok();
+
     let default_port = 8000;
 
     let port = env::var("PORT").unwrap_or(default_port.to_string()).parse().unwrap_or(default_port);
