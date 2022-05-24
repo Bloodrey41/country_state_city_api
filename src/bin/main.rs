@@ -13,7 +13,7 @@ async fn main() -> std::io::Result<()> {
     let port = env::var("PORT").unwrap_or(default_port.to_string()).parse().unwrap_or(default_port);
 
     HttpServer::new(move || {
-        let allowed_origin = env::var("ALLOWED_ORIGIN").unwrap_or(String::from("http://localhost:3000"));
+        let allowed_origin = env::var("ALLOWED_ORIGIN").unwrap_or("http://localhost:3000".to_owned());
 
         let allowed_origin = &allowed_origin[..];
 
@@ -25,7 +25,7 @@ async fn main() -> std::io::Result<()> {
             .configure(init_state_api)
             .configure(init_city_api)
     })
-    .bind(("127.0.0.1", port))?
+    .bind(("0.0.0.0", port))?
         .run()
         .await
 }
