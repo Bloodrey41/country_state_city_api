@@ -13,11 +13,12 @@ async fn main() -> std::io::Result<()> {
     let port = env::var("PORT").unwrap_or(default_port.to_string()).parse().unwrap_or(default_port);
 
     HttpServer::new(move || {
-        let allowed_origin = env::var("ALLOWED_ORIGIN").unwrap_or("http://localhost:3000".to_owned());
+        //let allowed_origin = env::var("ALLOWED_ORIGIN").unwrap_or("http://localhost:3000".to_owned());
 
-        let allowed_origin = &allowed_origin[..];
+        //let allowed_origin = &allowed_origin[..];
 
-        let cors = Cors::default().allowed_origin(allowed_origin);
+        //let cors = Cors::default().allowed_origin(allowed_origin);
+        let cors = Cors::default();
 
         App::new()
             .wrap(cors)

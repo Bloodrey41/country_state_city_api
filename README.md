@@ -48,8 +48,7 @@ source path/to/world.sql
    * `DB_USER` Database username.
    * `DB_PASSWORD` Database user password.
    * `DB_DATABASE` Database name.
-   * `PORT` Port where the app will run.
-   * `ALLOWED_ORIGIN` Origin from where the requests to the app will be made, if don't want this restriction, set it to `*`.
+   * `PORT` Port where the app will run (Optional, default=8000).
 
 ### Running
 
