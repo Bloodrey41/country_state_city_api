@@ -8,11 +8,11 @@ use geo::api::*;
 async fn main() -> std::io::Result<()> {
     dotenv().ok();
 
+    let host = env::var("host").unwrap_or(String::from("0.0.0.0"));
+
     let default_port = 8000;
 
     let port = env::var("PORT").unwrap_or(default_port.to_string()).parse().unwrap_or(default_port);
-
-    let host = env::var("host").unwrap_or(String::from("0.0.0.0"));
 
     HttpServer::new(move || {
         //let allowed_origin = env::var("ALLOWED_ORIGIN").unwrap_or("http://localhost:3000".to_owned());
@@ -28,7 +28,7 @@ async fn main() -> std::io::Result<()> {
             .configure(init_state_api)
             .configure(init_city_api)
     })
-    .bind((host, port))?
+    .bind(format!("{}:{}", host, port))?
         .run()
         .await
 }
