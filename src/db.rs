@@ -15,6 +15,7 @@ impl DBConnection {
             .user(Some(user))
             .pass(Some(password))
             .db_name(Some(database))
+            .ssl_opts(SslOpts::default())
         )?;
 
         let conn = pool.get_conn()?;
