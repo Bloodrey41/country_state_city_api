@@ -2,7 +2,7 @@ use actix_web::{HttpServer, App};
 use actix_cors::Cors;
 use dotenv::dotenv;
 use std::env;
-use geo::api::*;
+use world::api::*;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {

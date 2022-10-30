@@ -1,1 +1,1 @@
-web: ./target/release/geo
+web: ./target/release/world
