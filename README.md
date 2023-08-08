@@ -54,4 +54,4 @@ source path/to/world.sql
 
 1. Run the app with `cargo run`, it automatically will install all modules required.
 
-2. Open in a browser `http://localhost:port_definend_in_dotenv_file`.
+2. Open in a browser `http://localhost:port_defined_in_dotenv_file`.
